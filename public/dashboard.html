@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>FocusFlow | Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="toast"></div>
+
+<div class="card fade-in">
+  <h2> Your Focus Board</h2>
+
+  <input id="taskInput" placeholder="What do you want to accomplish?">
+  <button onclick="addTask()">➕ Add Task</button>
+
+  <div class="filter-row">
+    <button onclick="filterTasks('all')">All</button>
+    <button onclick="filterTasks('completed')">✔</button>
+    <button onclick="filterTasks('pending')">⏳</button>
+  </div>
+
+  <ul id="taskList"></ul>
+
+<button class="logout" onclick="logout()">Logout</button>
+
+</div>
+
+<script>
+function showToast(message, type="success") {
+  const toast = document.getElementById("toast");
+  toast.innerText = message;
+  toast.className = "show " + type;
+
+  setTimeout(() => {
+    toast.className = "";
+  }, 2500);
+}
+
+let token = localStorage.getItem("token");
+let currentFilter = "all";
+
+if (!token) {
+  window.location.href = "index.html";
+}
+
+document.body.classList.add("fade-in");
+
+async function getTasks() {
+  const res = await fetch('/tasks', {
+    headers: { 'Authorization': 'Bearer ' + token }
+  });
+
+  const tasks = await res.json();
+  taskList.innerHTML = "";
+  taskList.className = "task-grid";
+
+  tasks
+    .filter(t => {
+      if (currentFilter === "completed") return t.completed;
+      if (currentFilter === "pending") return !t.completed;
+      return true;
+    })
+    .forEach(t => {
+      const card = document.createElement("div");
+      card.className = "task-card";
+
+      const title = document.createElement("span");
+      title.innerText = t.title;
+      title.className = "task-title " + (t.completed ? "completed" : "");
+
+      const actions = document.createElement("div");
+      actions.className = "task-actions";
+
+      const toggle = document.createElement("button");
+      toggle.innerText = "✔";
+      toggle.onclick = () => toggleTask(t._id);
+
+      const del = document.createElement("button");
+      del.innerText = "✕";
+      del.onclick = () => {
+        card.style.opacity = "0";
+        setTimeout(() => deleteTask(t._id), 200);
+      };
+
+      actions.appendChild(toggle);
+      actions.appendChild(del);
+
+      card.appendChild(title);
+      card.appendChild(actions);
+
+      taskList.appendChild(card);
+    });
+}
+
+async function addTask() {
+  if (!taskInput.value) {
+    showToast("Enter a task!", "error");
+    return;
+  }
+
+  await fetch('/tasks', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + token
+    },
+    body: JSON.stringify({ title: taskInput.value })
+  });
+
+  showToast("Task added!", "success");
+  taskInput.value = "";
+  getTasks();
+}
+
+async function toggleTask(id) {
+  await fetch('/tasks/' + id, {
+    method: 'PUT',
+    headers: { 'Authorization': 'Bearer ' + token }
+  });
+  getTasks();
+}
+
+async function deleteTask(id) {
+  await fetch('/tasks/' + id, {
+    method: 'DELETE',
+    headers: { 'Authorization': 'Bearer ' + token }
+  });
+  showToast("Task deleted", "error");
+  getTasks();
+}
+
+function filterTasks(type) {
+  currentFilter = type;
+  getTasks();
+}
+
+function logout() {
+  localStorage.removeItem("token");
+  window.location.href = "index.html";
+}
+
+getTasks();
+</script>
+
+</body>
+</html>

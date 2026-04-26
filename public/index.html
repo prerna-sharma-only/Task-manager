@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>FocusFlow | Welcome</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="toast"></div>
+
+<div class="card fade-in">
+  <h2> FocusFlow</h2>
+  <p style="text-align:center; color:white; font-size:12px;">
+    Organize your day. Boost your focus.
+  </p>
+
+  <input id="email" placeholder="Enter your email">
+  <input id="password" type="password" placeholder="Enter your password">
+
+<button onclick="login()"> Login</button> <button class="secondary" onclick="register()">Create Account</button>
+
+</div>
+
+<script>
+function showToast(message, type="success") {
+  const toast = document.getElementById("toast");
+  toast.innerText = message;
+  toast.className = "show " + type;
+
+  setTimeout(() => {
+    toast.className = "";
+  }, 2500);
+}
+
+async function register() {
+  const res = await fetch('/register', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      name: "User",
+      email: email.value,
+      password: password.value
+    })
+  });
+
+  const data = await res.json();
+  showToast(data.message, "success");
+}
+
+async function login() {
+  const res = await fetch('/login', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      email: email.value,
+      password: password.value
+    })
+  });
+
+  const data = await res.json();
+
+  if (!res.ok) {
+    showToast(data.message, "error");
+    return;
+  }
+
+  localStorage.setItem("token", data.token);
+
+  document.body.classList.add("fade-out");
+
+  setTimeout(() => {
+    window.location.href = "dashboard.html";
+  }, 400);
+}
+</script>
+
+</body>
+</html>
