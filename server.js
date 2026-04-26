@@ -14,13 +14,13 @@ app.use(express.json());
 app.use(cors());
 app.use(express.static('public'));
 
-/* ---------------- DB CONNECTION ---------------- */
+//DB CONNECTION
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB Connected"))
   .catch(err => console.log("DB Error:", err.message));
 
-/* ---------------- AUTH ---------------- */
+//AUTH
 
 // Register
 app.post('/register', async (req, res) => {
@@ -69,7 +69,7 @@ app.post('/login', async (req, res) => {
   }
 });
 
-/* ---------------- TASKS ---------------- */
+//TASKS
 
 // Get tasks
 app.get('/tasks', auth, async (req, res) => {
@@ -137,7 +137,7 @@ app.delete('/tasks/:id', auth, async (req, res) => {
   }
 });
 
-/* ---------------- START SERVER ---------------- */
+//START SERVER
 
 const PORT = process.env.PORT || 5000;
 
