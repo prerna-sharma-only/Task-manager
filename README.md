@@ -115,13 +115,6 @@ Deployed using **Render**
 
 ---
 
-## 👩‍💻 Author
-
-**Prerna Sharma**    
-**Prasoon Mishra**
-
----
-
 <p align="center">
   💖 If you like this project, give it a ⭐
 </p>
