@@ -31,11 +31,11 @@
 
 ### 🔐 Login Page
 
-![Login UI](<img width="1760" height="912" alt="image" src="https://github.com/user-attachments/assets/7c8dbd41-c233-4919-a674-77f3f3089a45" />)    
+![Login UI]<img width="1760" height="912" alt="image" src="https://github.com/user-attachments/assets/7c8dbd41-c233-4919-a674-77f3f3089a45" />    
 
 ### 📊 Dashboard
 
-![Dashboard UI](<img width="1604" height="917" alt="image" src="https://github.com/user-attachments/assets/70e4838d-fa6d-4e5e-a218-09716b7a5410" />)    
+![Dashboard UI]<img width="1604" height="917" alt="image" src="https://github.com/user-attachments/assets/70e4838d-fa6d-4e5e-a218-09716b7a5410" />    
 
 ---
 
