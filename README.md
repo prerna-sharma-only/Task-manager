@@ -39,13 +39,13 @@
 
 ## 🚀 Features
 
-✨ User Authentication (JWT)
-✨ Add / Delete / Toggle Tasks
-✨ Filter Tasks (All / Completed / Pending)
-✨ Toast Notifications
-✨ Smooth UI & Animations
-✨ Glassmorphism + Modern Design
-✨ Responsive Dashboard Layout
+✨ User Authentication (JWT)    
+✨ Add / Delete / Toggle Tasks    
+✨ Filter Tasks (All / Completed / Pending)    
+✨ Toast Notifications    
+✨ Smooth UI & Animations    
+✨ Glassmorphism + Modern Design   
+✨ Responsive Dashboard Layout    
 
 ---
 
