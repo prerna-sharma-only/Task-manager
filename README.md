@@ -113,8 +113,26 @@ Deployed using **Render**
 * 🏷️ Task Categories & Priority
 * 🌙 Dark Mode Toggle
 
+---    
+
+## 👨‍💻 Author
+
+<div align="center">
+
+**Prerna Sharma**
+
+🚀 Building AI-powered experiences
+
+</div>
+
 ---
 
-<p align="center">
-  💖 If you like this project, give it a ⭐
-</p>
+## ⭐ Support
+
+If you like this project:
+
+⭐ Star the repo
+🔁 Share it
+🍴 Fork it
+
+---
