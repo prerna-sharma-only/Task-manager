@@ -1,7 +1,12 @@
-<h1 align="center">✨ FocusFlow Task Manager</h1>
+<h1 align="center"> FocusFlow Task Manager</h1>
+
 
 <p align="center">
-  🚀 A modern full-stack task manager with smooth UI, authentication & dashboard
+  <img src="https://readme-typing-svg.herokuapp.com?color=8A2BE2&size=25&center=true&vCenter=true&width=500&lines=Manage+Tasks+Effortlessly;Secure+Login+System;Beautiful+UI+Dashboard;Full+Stack+Project" />
+</p>
+
+<p align="center">
+   A modern full-stack task manager with smooth UI, authentication & dashboard
 </p>
 
 <p align="center">
@@ -13,21 +18,11 @@
 
 ---
 
-## ✨ Live Demo
+##  Live Demo
 
 🔗 **https://task-manager-s4yo.onrender.com/**
 
 ---
-
-## ⚡ Typing Effect
-
-<p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?color=8A2BE2&size=25&center=true&vCenter=true&width=500&lines=Manage+Tasks+Effortlessly;Secure+Login+System;Beautiful+UI+Dashboard;Full+Stack+Project" />
-</p>
-
----
-
-## 📸 Screenshots
 
 ### 🔐 Login Page
 ![Login UI](https://github.com/user-attachments/assets/7c8dbd41-c233-4919-a674-77f3f3089a45)    
@@ -37,7 +32,7 @@
 
 ---
 
-## 🚀 Features
+##  Features
 
 ✨ User Authentication (JWT)    
 ✨ Add / Delete / Toggle Tasks    
@@ -49,7 +44,7 @@
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 * ⚙️ Backend: Node.js + Express
 * 🗄️ Database: MongoDB Atlas
@@ -119,9 +114,13 @@ Deployed using **Render**
 
 <div align="center">
 
-**Prerna Sharma**
+### Prerna Sharma
 
-🚀 Building AI-powered experiences
+`Backend Developer` • `Java` • `DSA` • `Node.js` • `Express.js`
+
+<a href="https://github.com/prerna-sharma-only">
+<img src="https://img.shields.io/badge/View%20GitHub%20Profile-181717?style=for-the-badge&logo=github&logoColor=white"/>
+</a>
 
 </div>
 
